@@ -11,19 +11,14 @@ window.onload= function()
 
 		li.appendChild(texto);
 		lista.appendChild(li);
+
+		li.addEventListener('click', tachar, false);
 	}
 
-	list.addEventListener('click', tachar, false);
-
 	function tachar(event){
-		if(event.target.className==="done")
-		{
-			event.target.className=""
-		}
-		else
-		{
-			event.target.className= "done";	
-		}
+		var myClassList = event.target.classList;
+
+		myClassList.contains("done")?myClassList.remove("done"):myClassList.add("done");
 		 	
 	}
 }
